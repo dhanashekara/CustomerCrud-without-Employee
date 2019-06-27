@@ -9,12 +9,9 @@ import com.bank.customer.entity.Customer;
 public class CustomerService {
 
 	public String addCustomer(Customer customer) {
-		if ((Constants.customerDetailsNew.get(customer.getCustomerId())) != null) {
-			Constants.customerDetailsNew.put(customer.getCustomerId(), customer);
-			return "customer added successfully";
-		} else {
-			return "customer already exist!";
-		}
+		//if ((Constants.customerDetailsNew.get(customer.getCustomerId())) != null) {
+		Constants.customerDetailsNew.put(customer.getCustomerId(), customer);
+		return "customer added successfully";
 	}
 
 	public Object getCustomer(Integer customerId) {

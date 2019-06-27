@@ -32,7 +32,7 @@ public class CustomerController {
 
 	}
 	
-	@DeleteMapping()
+	@DeleteMapping
 	public Object deleteCustomer(Integer customerId) {
 		
 		return customerService.deleteCustomer(customerId);
