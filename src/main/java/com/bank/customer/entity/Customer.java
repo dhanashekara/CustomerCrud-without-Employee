@@ -32,10 +32,4 @@ public class Customer {
 	public void setPhonerNumber(String phonerNumber) {
 		this.phonerNumber = phonerNumber;
 	}
-	@Override
-	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerRole="
-				+ customerRole + ", phonerNumber=" + phonerNumber + "]";
-	}
-
 }
