@@ -2,40 +2,43 @@ package com.bank.customer.service;
 
 import org.springframework.stereotype.Service;
 
-import com.bank.customer.constants.Constants;
 import com.bank.customer.entity.Customer;
+import com.bank.customer.model.Model;
 
 @Service
 public class CustomerService {
 
 	public String addCustomer(Customer customer) {
-		//if ((Constants.customerDetailsNew.get(customer.getCustomerId())) != null) {
-		Constants.customerDetailsNew.put(customer.getCustomerId(), customer);
-		return "customer added successfully";
+		if (Model.customerDetailsNew.get(customer.getCustomerId()) == null) {
+			Model.customerDetailsNew.put(customer.getCustomerId(), customer);
+			return "customer added successfully";
+		} else {
+			return "customer already exists";
+		}
 	}
 
 	public Object getCustomer(Integer customerId) {
-		if (Constants.customerDetailsNew.get(customerId) != null)
-			return Constants.customerDetailsNew.get(customerId);
+		if (Model.customerDetailsNew.get(customerId) != null)
+			return Model.customerDetailsNew.get(customerId);
 		else
 			return "Customer Doesn't exist";
 	}
 
 	public Object deleteCustomer(Integer customerId) {
 
-		if (Constants.customerDetailsNew.get(customerId) != null) {
-			Constants.customerDetailsNew.remove(customerId);
+		if (Model.customerDetailsNew.get(customerId) != null) {
+			Model.customerDetailsNew.remove(customerId);
 			return "deleted successfully";
 		} else {
 			return "Customer Doesn't exist";
 		}
 	}
 
-	public Object updateCustomer(Integer customerId, String customerName) {
-		if (Constants.customerDetailsNew.get(customerId) != null) {
-			Customer cust = Constants.customerDetailsNew.get(customerId);
+	public String updateCustomer(Integer customerId, String customerName) {
+		if (Model.customerDetailsNew.get(customerId) != null) {
+			Customer cust = Model.customerDetailsNew.get(customerId);
 			cust.setCustomerName(customerName);
-			Constants.customerDetailsNew.put(customerId, cust);
+			Model.customerDetailsNew.put(customerId, cust);
 			return "updated successfully";
 		} else {
 			return "Customer Doesn't exist";

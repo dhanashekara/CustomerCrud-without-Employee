@@ -2,8 +2,10 @@ package com.bank.customer.controller;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -75,6 +77,34 @@ public class CustomerControllerTest {
 		this.mockMvc.perform(get("/customer/getCustomer{id}",555).contentType(MediaType.APPLICATION_JSON).content(asJsonString(customer)));
 		Customer cust = (Customer) customerController.getCustomer(customer.getCustomerId());
 		assertEquals(customer, cust);
+	}
+	
+	@Test
+	public void testUpdateCustomer() throws Exception {
+		
+		Integer customerId =1;
+		String customerName = "xyz";
+		
+		when(customerService.updateCustomer(customerId, customerName)).thenReturn("updated successfully");
+		this.mockMvc.perform(put("/customer/updateCustomer").contentType(MediaType.APPLICATION_JSON));
+				
+		String actual = (String) customerController.updateCustomer(customerId, customerName);
+		
+		assertEquals("updated successfully", actual);
+	}
+	
+	@Test
+	public void testDeleteCustomer() throws Exception {
+		
+		Integer customerId =1;
+		
+		when(customerService.deleteCustomer(customerId)).thenReturn("deleted successfully");
+		this.mockMvc.perform(delete("/customer/deleteCustomer").contentType(MediaType.APPLICATION_JSON));
+				
+		String actual = (String) customerController.deleteCustomer(customerId);
+		
+		assertEquals("deleted successfully", actual);
+
 	}
 
 }

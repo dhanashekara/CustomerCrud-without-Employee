@@ -32,13 +32,13 @@ public class CustomerController {
 
 	}
 	
-	@DeleteMapping
+	@DeleteMapping("/deleteCustomer")
 	public Object deleteCustomer(Integer customerId) {
 		
 		return customerService.deleteCustomer(customerId);
 	}
 	
-	@PutMapping
+	@PutMapping("/updateCustomer")
 	public Object updateCustomer(Integer customerId,String customerName) {
 		
 		return customerService.updateCustomer(customerId,customerName);
