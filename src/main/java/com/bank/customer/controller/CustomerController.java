@@ -1,5 +1,9 @@
 package com.bank.customer.controller;
 
+import java.io.IOException;
+
+import org.json.simple.JSONArray;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,18 +35,23 @@ public class CustomerController {
 		return customerService.getCustomer(customerId);
 
 	}
-	
+
 	@DeleteMapping("/deleteCustomer")
 	public Object deleteCustomer(Integer customerId) {
-		
+
 		return customerService.deleteCustomer(customerId);
 	}
-	
-	@PutMapping("/updateCustomer")
-	public Object updateCustomer(Integer customerId,String customerName) {
-		
-		return customerService.updateCustomer(customerId,customerName);
 
+	@PutMapping("/updateCustomer")
+	public Object updateCustomer(Integer customerId, String customerName) {
+
+		return customerService.updateCustomer(customerId, customerName);
+
+	}
+
+	@GetMapping("/getAllCustomers")
+	public ResponseEntity<JSONArray> getAllCustomers() throws IOException, ParseException {
+		return new ResponseEntity<JSONArray>(customerService.getAllCustomers(), HttpStatus.OK);
 	}
 
 }

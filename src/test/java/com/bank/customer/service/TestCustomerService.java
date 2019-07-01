@@ -2,9 +2,11 @@ package com.bank.customer.service;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.json.simple.parser.ParseException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -24,7 +26,7 @@ public class TestCustomerService {
 	Model model;
 
 	@Test
-	public void testAddCustomer() {
+	public void testAddCustomer() throws IOException, ParseException {
 		Customer customer = new Customer();
 		customer.setCustomerId(1);
 		customer.setCustomerName("leela");
