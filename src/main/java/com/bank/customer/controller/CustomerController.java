@@ -53,5 +53,7 @@ public class CustomerController {
 	public ResponseEntity<JSONArray> getAllCustomers() throws IOException, ParseException {
 		return new ResponseEntity<JSONArray>(customerService.getAllCustomers(), HttpStatus.OK);
 	}
+	/*
+	*/
 
 }
