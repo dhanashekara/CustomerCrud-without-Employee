@@ -1,18 +1,1 @@
-[
-	{
-		"100": {
-			"customerId": 100,
-			"customerName": "Gupta",
-			"customerRole": "ASE",
-			"phonerNumber": "1234"
-		}
-	},
-	{
-		"101": {
-			"customerId": 101,
-			"customerName": "Akash",
-			"customerRole": "ASE",
-			"phonerNumber": "12345"
-		}
-	}
-]
+{"400":{"customerId":400,"customerName":"string","customerRole":"string","phonerNumber":"string"},"500":{"customerId":500,"customerName":"string","customerRole":"string","phonerNumber":"string"},"100":{"customerId":100,"customerName":"string","customerRole":"string","phonerNumber":"string"},"300":{"customerId":300,"customerName":"string","customerRole":"string","phonerNumber":"string"}}

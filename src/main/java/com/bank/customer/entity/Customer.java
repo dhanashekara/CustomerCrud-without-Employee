@@ -6,7 +6,7 @@ public class Customer {
 	private String customerName;
 	private String customerRole;
 	private String phonerNumber;
-	
+
 	
 	public Integer getCustomerId() {
 		return customerId;

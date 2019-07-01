@@ -69,7 +69,7 @@ public class TestCustomerService {
 	}
 
 	@Test
-	public void updateCustomer() {
+	public void updateCustomer() throws IOException {
 
 		Integer id = 1;
 		String custName = "xyz";
@@ -78,7 +78,7 @@ public class TestCustomerService {
 	}
 
 	@Test
-	public void deleteCustomer() {
+	public void deleteCustomer() throws IOException {
 		Integer id = 1;
 		Object actual = customerService.deleteCustomer(id);
 		assertEquals("Customer Doesn't exist", actual);

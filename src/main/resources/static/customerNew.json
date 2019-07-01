@@ -1,0 +1,18 @@
+[
+	{
+		"100": {
+			"customerId": 100,
+			"customerName": "Gupta",
+			"customerRole": "ASE",
+			"phonerNumber": "1234"
+		}
+	},
+	{
+		"101": {
+			"customerId": 101,
+			"customerName": "Akash",
+			"customerRole": "ASE",
+			"phonerNumber": "12345"
+		}
+	}
+]
