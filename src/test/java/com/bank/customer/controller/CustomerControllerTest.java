@@ -62,7 +62,7 @@ public class CustomerControllerTest {
 		this.mockMvc.perform(
 				post("/customer/addCustomer").contentType(MediaType.APPLICATION_JSON).content(asJsonString(customer)));
 
-		ResponseEntity<String> cust = customerController.addCustomer(customer);
+		ResponseEntity<Object> cust = customerController.addCustomer(customer);
 		assertEquals(200, cust.getStatusCodeValue());
 	}
 

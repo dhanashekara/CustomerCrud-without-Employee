@@ -1,1 +1,1 @@
-{"400":{"customerId":400,"customerName":"string","customerRole":"string","phonerNumber":"string"},"500":{"customerId":500,"customerName":"string","customerRole":"string","phonerNumber":"string"},"100":{"customerId":100,"customerName":"string","customerRole":"string","phonerNumber":"string"},"300":{"customerId":300,"customerName":"string","customerRole":"string","phonerNumber":"string"}}
+{"1":{"customerId":1,"customerName":"xyz","customerRole":"admin","phonerNumber":"132456789"}}
